@@ -5,17 +5,7 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "Learning Hub App",
-      description: "A native Android app for learning Java, Kotlin, and Flutter with interactive UI.",
-      link: "https://github.com/dkdilipkumar/learning-hub"
-    },
-    {
-      title: "Task Manager",
-      description: "Productivity app built using Jetpack Compose and Room database.",
-      link: "https://github.com/dkdilipkumar/task-manager"
-    },
-    {
-      title: "More Projects",
+      title: "Projects On GitHub",
       description: "Explore all my repositories including UI samples, utility apps, and learning tools.",
       link: "https://github.com/dkdilipkumar?tab=repositories"
     }
