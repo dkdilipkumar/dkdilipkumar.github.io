@@ -9,9 +9,9 @@ import Footer from "@/components/portfolio/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
       <Header />
-      <main>
+      <main className="space-y-8">
         <About />
         <Skills />
         <Projects />
