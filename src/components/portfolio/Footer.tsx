@@ -23,7 +23,9 @@ const Footer = () => {
           <Heart className="text-red-400 animate-pulse" size={16} />
           <span className="text-gray-300">by Dilip Kumar</span>
         </div>
-        <p className="text-gray-400">&copy; 2025 Dilip Kumar. All rights reserved.</p>
+        <p className="text-gray-400">
+          &copy; {new Date().getFullYear()} Dilip Kumar. All rights reserved.
+        </p>
       </div>
     </motion.footer>
   );
