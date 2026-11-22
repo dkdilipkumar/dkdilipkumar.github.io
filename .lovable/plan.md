@@ -16,6 +16,8 @@
 
 The alternative is migration to TanStack Start for server-rendered routes. It is a larger framework and deployment change, but is a better fit if pages must be rendered dynamically at request time. Astro is not proposed because it is outside this project's supported Lovable stack.
 
+Choose between keeping React/Vite with build-time rendering or moving to TanStack Start before implementation begins.
+
 No application code will change until this rendering choice and the plan are approved.
 
 ## Implementation after approval
