@@ -1,7 +1,7 @@
 # Website rebuild roadmap
 
 - [x] Audit the live Netlify site and Lovable preview; record routes, anchors, assets, and mobile Lighthouse baseline.
-- [ ] Select the rendering approach and approve the plan (waiting on DK).
+- [x] Approve the plan and select React/Vite with build-time static rendering.
 - [ ] Phase 1: foundation, shared design system, content configuration, routes, SEO, and static rendering.
 - [ ] Phase 2: Home, About, and Contact.
 - [ ] Phase 3: Services hub and nine service pages.
