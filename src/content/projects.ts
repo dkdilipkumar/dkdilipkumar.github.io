@@ -1,3 +1,9 @@
+import reeloraIcon from "@/assets/reelora-icon.webp.asset.json";
+import reeloraSearch from "@/assets/reelora-search.webp.asset.json";
+import reeloraDetail from "@/assets/reelora-detail.webp.asset.json";
+import reeloraDiscovery from "@/assets/reelora-discovery.webp.asset.json";
+import reeloraPreferences from "@/assets/reelora-preferences.webp.asset.json";
+
 export interface ProjectLink {
   label: string;
   url: string;
@@ -17,6 +23,7 @@ export interface Project {
   media: { src: string; alt: string; width: number; height: number }[];
   published: boolean;
   notes?: string;
+  attribution?: string;
 }
 
 export const projects: Project[] = [
@@ -31,12 +38,17 @@ export const projects: Project[] = [
     stack: ["Flutter", "Firebase", "TMDb API"],
     features: ["Trending, popular, and upcoming trailers", "Search across countries and languages", "Favourites and a watchlist", "Premium streaming-availability information"],
     links: [
-      { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.dk.reelora" },
-      { label: "PhonePe Appstore", url: "https://www.indusappstore.com/apps/entertainment/reelora/com.dk.reelora" },
+      { label: "PhonePe Appstore", url: "https://www.phonepeappstore.com/apps/entertainment/reelora/com.dk.reelora/?page=details&id=com.dk.reelora" },
     ],
-    media: [],
-    published: false,
-    notes: "Hold the public case-study card until original screenshots are supplied or approved for use.",
+    media: [
+      { src: reeloraDiscovery.url, alt: "Reelora home screen showing trending, popular, and upcoming movie selections", width: 500, height: 1024 },
+      { src: reeloraSearch.url, alt: "Reelora search screen listing movie titles", width: 512, height: 1024 },
+      { src: reeloraDetail.url, alt: "Reelora movie detail screen with title information", width: 512, height: 1024 },
+      { src: reeloraPreferences.url, alt: "Reelora preferences for language, region, genres, and content settings", width: 500, height: 1024 },
+    ],
+    published: true,
+    notes: "The legacy Google Play listing returned 404 during verification; the PhonePe Appstore listing is live.",
+    attribution: "Reelora uses the TMDb API and is not endorsed or certified by TMDb.",
   },
   {
     slug: "tradeos-phoenix",
