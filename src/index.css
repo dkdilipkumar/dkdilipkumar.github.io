@@ -2,102 +2,127 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    color-scheme: dark;
+    --background: 216 18% 5%;
+    --foreground: 60 13% 96%;
+    --surface: 217 23% 9%;
+    --card: 218 25% 11%;
+    --card-foreground: 60 13% 96%;
+    --popover: 217 23% 9%;
+    --popover-foreground: 60 13% 96%;
+    --primary: 225 100% 70%;
+    --primary-foreground: 216 18% 5%;
+    --secondary: 255 100% 74%;
+    --secondary-foreground: 216 18% 5%;
+    --muted: 218 18% 14%;
+    --muted-foreground: 217 9% 68%;
+    --accent: 218 18% 14%;
+    --accent-foreground: 60 13% 96%;
+    --destructive: 0 100% 71%;
+    --destructive-foreground: 216 18% 5%;
+    --border: 0 0% 100% / 0.1;
+    --input: 0 0% 100% / 0.16;
+    --ring: 225 100% 70%;
+    --brand-blue: 225 100% 70%;
+    --brand-violet: 255 100% 74%;
+    --brand-success: 142 69% 58%;
+    --brand-error: 0 100% 71%;
+    --text-tertiary: 217 9% 53%;
+    --pillar-build: 225 100% 70%;
+    --pillar-create: 255 100% 74%;
+    --pillar-grow: 207 100% 74%;
+    --sidebar-background: 217 23% 9%;
+    --sidebar-foreground: 60 13% 96%;
+    --sidebar-primary: 225 100% 70%;
+    --sidebar-primary-foreground: 216 18% 5%;
+    --sidebar-accent: 218 18% 14%;
+    --sidebar-accent-foreground: 60 13% 96%;
+    --sidebar-border: 0 0% 100% / 0.1;
+    --sidebar-ring: 225 100% 70%;
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --shadow-editorial: 0 20px 60px hsl(0 0% 0% / 0.28);
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply min-w-[320px] bg-background font-sans text-foreground antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: hsl(var(--brand-blue) / 0.28);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply inline-flex min-h-11 items-center rounded-sm px-3 text-sm text-muted-foreground transition-colors hover:text-foreground;
+  }
+
+  .menu-link {
+    @apply block min-h-9 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground;
+  }
+
+  .footer-label {
+    @apply mb-4 font-mono text-xs uppercase text-muted-foreground;
+  }
+
+  .footer-link {
+    @apply text-sm text-muted-foreground transition-colors hover:text-foreground;
+  }
+
+  .skip-link {
+    @apply sr-only fixed left-4 top-4 z-[100] rounded-sm bg-primary px-4 py-3 font-medium text-primary-foreground focus:not-sr-only;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs uppercase text-muted-foreground;
+  }
+
+  .page-container {
+    @apply mx-auto w-full max-w-[1240px] px-5 md:px-8;
+  }
+
+  .section-space {
+    @apply py-20 md:py-28;
+  }
+}
+
+@layer utilities {
+  .pb-safe {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
