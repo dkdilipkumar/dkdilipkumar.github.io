@@ -338,7 +338,7 @@ const Home = () => {
           </div>
           <div className="mt-9 flex flex-wrap gap-2">
             {industries.map((industry) => (
-              <Link className="border border-border px-4 py-3 text-sm text-muted-foreground transition-colors hover:border-brand-blue hover:text-foreground" key={industry.name} to={`/industries#${industry.name.toLowerCase().replaceAll(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`}>{industry.name}</Link>
+              <Link className="border border-border px-4 py-3 text-sm text-muted-foreground transition-colors hover:border-brand-blue hover:text-foreground" key={industry.name} to={`/industries#${industry.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`}>{industry.name}</Link>
             ))}
           </div>
         </div>

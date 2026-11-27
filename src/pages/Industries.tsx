@@ -6,7 +6,7 @@ import SectionHeading from "@/components/site/SectionHeading";
 import { industries } from "@/content/industries";
 import { services } from "@/content/services";
 
-const slugify = (value: string) => value.toLowerCase().replaceAll(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const slugify = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 const IndustriesPage = () => {
   const location = useLocation();
